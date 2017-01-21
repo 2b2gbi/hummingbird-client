@@ -17,12 +17,15 @@ export default Component.extend(ClipboardMixin, {
   isEditing: false,
   isReplying: false,
   isTopLevel: false,
-
+  globals: service(),
   metrics: service(),
   notify: service(),
   session: service(),
   store: service(),
-  host: getter(() => `${location.protocol}//${location.host}`),
+
+  host: getter(function() {
+    return get(this, 'globals').getHost();
+  }),
 
   isEditable: getter(function() {
     if (get(this, 'session.account').hasRole('admin', get(this, 'comment'))) {

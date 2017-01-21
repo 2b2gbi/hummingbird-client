@@ -10,13 +10,16 @@ import ClipboardMixin from 'client/mixins/clipboard';
 
 export default Component.extend(ClipboardMixin, {
   classNames: ['stream-item', 'row'],
-
+  globals: service(),
   metrics: service(),
   notify: service(),
   router: service('-routing'),
   session: service(),
   store: service(),
-  host: getter(() => `${location.protocol}//${location.host}`),
+
+  host: getter(function() {
+    return get(this, 'globals').getHost();
+  }),
 
   tweetLink: getter(function() {
     const host = get(this, 'host');

@@ -6,6 +6,7 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 import moment from 'moment';
 
 export default Route.extend(ApplicationRouteMixin, {
+  globals: service(),
   i18n: service(),
   headData: service(),
   metrics: service(),
@@ -23,6 +24,7 @@ export default Route.extend(ApplicationRouteMixin, {
   },
 
   headTags() {
+    const host = get(this, 'globals').getHost();
     const desc = 'Share anime and manga experiences, get recommendations and see what friends are watching or reading.';
     return [{
       type: 'title',
@@ -54,7 +56,7 @@ export default Route.extend(ApplicationRouteMixin, {
       tagId: 'meta-og-image',
       attrs: {
         property: 'og:image',
-        content: `${window.location.protocol}//${window.location.host}/kitsu-256.png`
+        content: `${host}/kitsu-256.png`
       }
     }, {
       type: 'meta',
@@ -68,7 +70,7 @@ export default Route.extend(ApplicationRouteMixin, {
       tagId: 'meta-twitter-image',
       attrs: {
         name: 'twitter:image',
-        content: `${window.location.protocol}//${window.location.host}/kitsu-256.png`,
+        content: `${host}/kitsu-256.png`,
       }
     }];
   },

@@ -7,15 +7,16 @@ import config from './config/environment';
 const RouterInstance = Router.extend({
   location: config.locationType,
   rootURL: config.rootURL,
+  globals: service(),
   metrics: service(),
   headData: service(),
 
   didTransition() {
     this._super(...arguments);
     scheduleOnce('afterRender', this, () => {
-      get(this, 'headData').set('url', `${window.location.protocol}//${window.location.host}${get(this, 'url')}`);
+      get(this, 'headData').set('url', get(this, 'globals').getFullURL());
       const page = get(this, 'url');
-      const title = get(this, 'currentRouteName') || 'Unknown';
+      const title = get(this, 'currentRouteName');
       get(this, 'metrics').trackPage({ page, title });
     });
   },

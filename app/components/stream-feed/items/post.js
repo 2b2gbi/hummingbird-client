@@ -19,14 +19,17 @@ export default Component.extend(ClipboardMixin, {
   isHidden: false,
   isOverflowed: false,
   isExpanded: false,
-
+  globals: service(),
   notify: service(),
   router: service('-routing'),
   session: service(),
   store: service(),
   metrics: service(),
   viewport: service(),
-  host: getter(() => `${location.protocol}//${location.host}`),
+
+  host: getter(function() {
+    return get(this, 'globals').getHost();
+  }),
 
   activity: getter(function() {
     return get(this, 'group.activities.firstObject');
