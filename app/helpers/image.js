@@ -2,10 +2,10 @@ import Helper from 'ember-helper';
 import get from 'ember-metal/get';
 import set from 'ember-metal/set';
 import observer from 'ember-metal/observer';
-import jQuery from 'jquery';
+import { typeOf } from 'ember-utils';
 
 export function image(object, size = 'original') {
-  if (jQuery.isPlainObject(object) === true) {
+  if (typeOf(object) === 'object') {
     return get(object, size);
   }
   return object;
