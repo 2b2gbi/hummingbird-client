@@ -6,6 +6,7 @@ import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-
 
 export default Route.extend(UnauthenticatedRouteMixin, {
   queryParams: { token: { replace: true } },
+  routeIfAlreadyAuthenticated: 'dashboard',
 
   // Remove token from URL so it can't leak if we have an external link on this page.
   setupController(controller) {

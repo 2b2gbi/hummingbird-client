@@ -9,6 +9,7 @@ import QueryableMixin from 'client/mixins/routes/queryable';
 import PaginationMixin from 'client/mixins/routes/pagination';
 import SlideHeaderMixin from 'client/mixins/routes/slide-header';
 import moment from 'moment';
+import canUseDOM from 'ember-metrics/utils/can-use-dom';
 
 export default Route.extend(SlideHeaderMixin, QueryableMixin, PaginationMixin, {
   mediaQueryParams: {
@@ -79,15 +80,19 @@ export default Route.extend(SlideHeaderMixin, QueryableMixin, PaginationMixin, {
 
   setupController(controller) {
     this._super(...arguments);
-    jQuery(document.body).addClass('browse-page');
-    jQuery(document).on('scroll.media', () => controller._handleScroll());
+    if (canUseDOM) {
+      jQuery(document.body).addClass('browse-page');
+      jQuery(document).on('scroll.media', () => controller._handleScroll());
+    }
     controller._setDirtyValues();
   },
 
   resetController() {
     this._super(...arguments);
-    jQuery(document.body).removeClass('browse-page');
-    jQuery(document).off('scroll.media');
+    if (canUseDOM) {
+      jQuery(document.body).removeClass('browse-page');
+      jQuery(document).off('scroll.media');
+    }
   },
 
   serializeQueryParam(value, key) {
