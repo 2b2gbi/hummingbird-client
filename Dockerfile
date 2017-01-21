@@ -19,6 +19,5 @@ RUN bower install --allow-root -q
 COPY . /opt/kitsu/client
 
 ENTRYPOINT ["./node_modules/.bin/ember"]
-CMD ["serve", "--port=80", "--environment=development", "--live-reload-port=57777"]
-EXPOSE 57777
+CMD ["fastboot", "--serve-assets", "--port=80", "--environment=development"]
 EXPOSE 80
