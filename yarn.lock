@@ -1123,18 +1123,6 @@ broccoli-funnel-reducer@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/broccoli-funnel-reducer/-/broccoli-funnel-reducer-1.0.0.tgz#11365b2a785aec9b17972a36df87eef24c5cc0ea"
 
-broccoli-funnel@0.2.8:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/broccoli-funnel/-/broccoli-funnel-0.2.8.tgz#8a78553e9c275ed08e37d4fc2ba0a15ce604a250"
-  dependencies:
-    array-equal "^1.0.0"
-    broccoli-plugin "^1.0.0"
-    debug "^2.2.0"
-    minimatch "^2.0.1"
-    mkdirp "^0.5.0"
-    symlink-or-copy "^1.0.0"
-    walk-sync-matcher "^0.2.2"
-
 broccoli-funnel@^1.0.0, broccoli-funnel@^1.0.1, broccoli-funnel@^1.0.2, broccoli-funnel@^1.0.6, broccoli-funnel@^1.0.7, broccoli-funnel@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/broccoli-funnel/-/broccoli-funnel-1.1.0.tgz#dfb91a37c902456456de4a40a1881948d65b27d9"
@@ -2179,22 +2167,21 @@ ember-cli-eslint@3.0.2:
     rsvp "^3.2.1"
     walk-sync "^0.3.0"
 
-ember-cli-fastboot@1.0.0-beta.13:
+ember-cli-fastboot@ember-fastboot/ember-cli-fastboot#master:
   version "1.0.0-beta.13"
-  resolved "https://registry.yarnpkg.com/ember-cli-fastboot/-/ember-cli-fastboot-1.0.0-beta.13.tgz#3a57541638de29f7ef967ee6135e4eef8a6aa05f"
+  resolved "https://codeload.github.com/ember-fastboot/ember-cli-fastboot/tar.gz/f75c3fdcb53ba801558b0925a3b6b82476dc90a6"
   dependencies:
-    broccoli-funnel "0.2.8"
+    broccoli-funnel "^1.0.0"
     broccoli-merge-trees "^1.1.1"
     broccoli-plugin "^1.2.1"
     broccoli-stew "^1.2.0"
     compression "^1.6.2"
     core-object "^2.0.5"
     debug "^2.2.0"
-    ember-cli-babel "^5.1.5"
+    ember-cli-babel "^5.1.7"
     ember-cli-version-checker "^1.1.6"
-    ember-test-helpers "^0.5.22"
     express "^4.8.5"
-    fastboot-express-middleware "1.0.0-beta.8"
+    fastboot-express-middleware "1.0.0-rc.3"
     fastboot-filter-initializers "0.0.2"
     lodash.defaults "^4.0.1"
     lodash.uniq "^4.2.0"
@@ -2878,12 +2865,6 @@ ember-svg-jar@0.9.3:
     lodash "^4.13.1"
     mkdirp "^0.5.1"
 
-ember-test-helpers@^0.5.22:
-  version "0.5.34"
-  resolved "https://registry.yarnpkg.com/ember-test-helpers/-/ember-test-helpers-0.5.34.tgz#c8439108d1cba1d7d838c212208a5c4061471b83"
-  dependencies:
-    klassy "^0.1.3"
-
 ember-test-helpers@^0.6.0-beta.1:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/ember-test-helpers/-/ember-test-helpers-0.6.0.tgz#1f644fd303437ef4d19430a3e18447d57a97cf36"
@@ -3407,12 +3388,13 @@ fast-sourcemap-concat@^1.0.1:
     source-map "^0.4.2"
     source-map-url "^0.3.0"
 
-fastboot-express-middleware@1.0.0-beta.8:
-  version "1.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/fastboot-express-middleware/-/fastboot-express-middleware-1.0.0-beta.8.tgz#d1e5262dc23a0f49f8393a0f46e9ecd75c604f3f"
+fastboot-express-middleware@1.0.0-rc.3:
+  version "1.0.0-rc.3"
+  resolved "https://registry.yarnpkg.com/fastboot-express-middleware/-/fastboot-express-middleware-1.0.0-rc.3.tgz#9b98076a815e200d071f256c95c602197dec5134"
   dependencies:
+    broccoli-module-alchemist-install "^0.1.1"
     chalk "^1.1.3"
-    fastboot "^1.0.0-beta.5"
+    fastboot "^1.0.0-rc.0"
 
 fastboot-filter-initializers@0.0.1:
   version "0.0.1"
@@ -3426,7 +3408,7 @@ fastboot-filter-initializers@0.0.2:
   dependencies:
     broccoli-funnel "^1.0.1"
 
-fastboot@^1.0.0-beta.5:
+fastboot@^1.0.0-rc.0:
   version "1.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/fastboot/-/fastboot-1.0.0-rc.2.tgz#759951a6862cbb22cf6641455ab527c40106aaa0"
   dependencies:
@@ -4491,10 +4473,6 @@ kind-of@^3.0.2:
   dependencies:
     is-buffer "^1.0.2"
 
-klassy@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/klassy/-/klassy-0.1.3.tgz#c31d5756d583197d75f582b6e692872be497067f"
-
 klaw@^1.0.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/klaw/-/klaw-1.3.1.tgz#4088433b46b3b1ba259d78785d8e96f73ba02439"
@@ -5027,7 +5005,7 @@ mime@1.3.4, mime@^1.2.11:
   dependencies:
     brace-expansion "^1.0.0"
 
-minimatch@^2.0.1, minimatch@^2.0.10, minimatch@^2.0.3, minimatch@^2.0.8:
+minimatch@^2.0.1, minimatch@^2.0.3, minimatch@^2.0.8:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-2.0.10.tgz#8d087c39c6b38c001b97fca7ce6d0e1e80afbac7"
   dependencies:
@@ -5105,6 +5083,13 @@ najax@^0.7.0:
   dependencies:
     jquery-deferred "^0.3.0"
     lodash "^4.6.1"
+    qs "^6.2.0"
+
+najax@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/najax/-/najax-1.0.0.tgz#76b9e7a63be35a7741a1c5b12ab77b16bfa07252"
+  dependencies:
+    jquery-deferred "^0.3.0"
     qs "^6.2.0"
 
 nan@^2.3.2:
@@ -6952,12 +6937,6 @@ verror@1.3.6:
   resolved "https://registry.yarnpkg.com/verror/-/verror-1.3.6.tgz#cff5df12946d297d2baaefaa2689e25be01c005c"
   dependencies:
     extsprintf "1.0.2"
-
-walk-sync-matcher@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/walk-sync-matcher/-/walk-sync-matcher-0.2.2.tgz#60baf44875b2d9a660876373ed7b8ece7332899f"
-  dependencies:
-    minimatch "^2.0.10"
 
 walk-sync@^0.1.3:
   version "0.1.3"
