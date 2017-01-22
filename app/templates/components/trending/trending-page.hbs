@@ -1,17 +1,10 @@
-{{! TODO: Move to CSS class that can be applied }}
-<style>
-  .global-container {
-    max-width: 100%;
-  }
-</style>
-
 {{#if session.hasUser}}
   {{trending/trending-banner}}
 {{else}}
   {{trending/guest-banner}}
 {{/if}}
 
-<div class="trending-sections {{if session.hasUser "logged-in"}}">
+<div class="trending-sections">
   {{! Trending Media }}
   {{trending/trending-media}}
 

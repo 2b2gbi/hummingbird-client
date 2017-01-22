@@ -5,6 +5,7 @@ import service from 'ember-service/inject';
 import { underscore } from 'ember-string';
 
 export default Component.extend({
+  classNames: ['guest-banner'],
   facebook: service(),
   session: service(),
 

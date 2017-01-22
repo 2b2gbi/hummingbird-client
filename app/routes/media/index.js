@@ -7,11 +7,10 @@ import { task, timeout } from 'ember-concurrency';
 import jQuery from 'jquery';
 import QueryableMixin from 'client/mixins/routes/queryable';
 import PaginationMixin from 'client/mixins/routes/pagination';
-import SlideHeaderMixin from 'client/mixins/routes/slide-header';
 import moment from 'moment';
 import canUseDOM from 'ember-metrics/utils/can-use-dom';
 
-export default Route.extend(SlideHeaderMixin, QueryableMixin, PaginationMixin, {
+export default Route.extend(QueryableMixin, PaginationMixin, {
   mediaQueryParams: {
     averageRating: { refreshModel: true, replace: true },
     genres: { refreshModel: true, replace: true },
@@ -81,7 +80,6 @@ export default Route.extend(SlideHeaderMixin, QueryableMixin, PaginationMixin, {
   setupController(controller) {
     this._super(...arguments);
     if (canUseDOM) {
-      jQuery(document.body).addClass('browse-page');
       jQuery(document).on('scroll.media', () => controller._handleScroll());
     }
     controller._setDirtyValues();
@@ -90,7 +88,6 @@ export default Route.extend(SlideHeaderMixin, QueryableMixin, PaginationMixin, {
   resetController() {
     this._super(...arguments);
     if (canUseDOM) {
-      jQuery(document.body).removeClass('browse-page');
       jQuery(document).off('scroll.media');
     }
   },

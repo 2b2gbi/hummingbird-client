@@ -1,8 +1,4 @@
 .quick-update {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50px;
   height: 270px;
   background: $voodoo;
   overflow: hidden;
@@ -146,119 +142,119 @@
       left: 0;
     }
   }
-}
 
-.quick-update-loading {
-  text-align: center;
-  width: 100%;
-  margin-top: 80px;
-}
-
-.quick-update--header {
-  margin-top: 15px;
-  h6 {
-    color: #a3a9b7;
-    font-size: 16px;
-    margin-bottom: 0;
-    line-height: 26px;
-    font-weight: normal;
+  .quick-update-loading {
+    text-align: center;
+    width: 100%;
+    margin-top: 80px;
   }
-  button {
-    padding: 3px 5px;
-    font-size: 12px;
-    background: transparent;
-    border: 1px solid #a3a9b7;
-    margin-left: 10px;
-    color: #a3a9b7;
-    &:hover {
-      background: rgba(255,255,255,.1);
+
+  .quick-update--header {
+    margin-top: 15px;
+    h6 {
+      color: #a3a9b7;
+      font-size: 16px;
+      margin-bottom: 0;
+      line-height: 26px;
+      font-weight: normal;
+    }
+    button {
+      padding: 3px 5px;
+      font-size: 12px;
+      background: transparent;
+      border: 1px solid #a3a9b7;
+      margin-left: 10px;
+      color: #a3a9b7;
+      &:hover {
+        background: rgba(255,255,255,.1);
+      }
     }
   }
-}
 
-.quick-update--rate {
-  margin-bottom: 15px;
+  .quick-update--rate {
+    margin-bottom: 15px;
 
-  .star-empty path {
-    fill: rgba(255,255,255,.6);
+    .star-empty path {
+      fill: rgba(255,255,255,.6);
+    }
+    .star-full .star-rating-filled, .star-half .star-rating-filled, .star-variable .star-rating-filled {
+      stop-color: $white;
+    }
+    .star-full .star-rating-base, .star-half .star-rating-base, .star-variable .star-rating-base {
+      stop-color: rgba(255,255,255,.6);
+    }
   }
-  .star-full .star-rating-filled, .star-half .star-rating-filled, .star-variable .star-rating-filled {
-    stop-color: $white;
-  }
-  .star-full .star-rating-base, .star-half .star-rating-base, .star-variable .star-rating-base {
-    stop-color: rgba(255,255,255,.6);
-  }
-}
 
-a.update--entry-title {
-  color: $white;
-  display: inline-block;
-  font-weight: 700;
-  width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  &:hover {
+  a.update--entry-title {
     color: $white;
-    opacity: .7;
-  }
-}
-
-.series-progress {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.empty-panel {
-  text-align: center;
-  border: 2px dashed rgba(255,255,255,.2);
-  svg {
-    width: 60px;
-    fill: rgba(255,255,255,.1);
-    margin-top: 70px;
-  }
-}
-
-.hint-panel {
-  @extend .card;
-  padding: 15px;
-  font-size: 14px;
-  border: none;
-  .quick-update-item {
-    margin: 0;
-  }
-  .button {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    right: 15px;
-    font-size: 14px;
-    padding: 10px;
+    display: inline-block;
+    font-weight: 700;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     &:hover {
       color: $white;
+      opacity: .7;
     }
   }
-}
 
-.progress-bar {
-  display: block;
-  position: relative;
-  height: 3px;
-  background-color: rgba(255,255,255,.3);
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -moz-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  margin: 1px 8px 0 0;
-  .progress-completed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2px;
-    background-color: #E50914;
+  .series-progress {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .empty-panel {
+    text-align: center;
+    border: 2px dashed rgba(255,255,255,.2);
+    svg {
+      width: 60px;
+      fill: rgba(255,255,255,.1);
+      margin-top: 70px;
+    }
+  }
+
+  .hint-panel {
+    @extend .card;
+    padding: 15px;
+    font-size: 14px;
+    border: none;
+    .quick-update-item {
+      margin: 0;
+    }
+    .button {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      font-size: 14px;
+      padding: 10px;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .progress-bar {
+    display: block;
+    position: relative;
+    height: 3px;
+    background-color: rgba(255,255,255,.3);
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -moz-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin: 1px 8px 0 0;
+    .progress-completed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background-color: #E50914;
+    }
   }
 }

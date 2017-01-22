@@ -5,12 +5,6 @@
 // Hello
 // -- WOPIAN
 
-
-// temporary padding for fixed header. Will need to be addressed when dealing with cover photos.
-body {
-  padding-top: 80px;
-}
-
 // Need a more elegant solution for vertically centering primary-nav content. Currently the height of the
 // avatar causes the header to become too large (due to the top and bottom padding) and forces the
 // left-hand links to misalign vertically.
